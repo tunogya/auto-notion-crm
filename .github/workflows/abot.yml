@@ -1,16 +1,19 @@
 name: abot
 
 on:
-  schedule:
-    - cron: '0 * * * *'
+#  schedule:
+#    - cron: '0 * * * *'
+  push:
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     strategy:
-        matrix:
-            node-version: [16.x]
+      matrix:
+        node-version: [ 16.x ]
 
     env:
       AUTH0_ISSUER_BASE_URL: ${{ secrets.AUTH0_ISSUER_BASE_URL }}
@@ -21,7 +24,7 @@ jobs:
       NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
