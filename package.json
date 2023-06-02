@@ -4,6 +4,7 @@
   "scripts": {
     "start": "node src/index.js"
   },
+  "type": "module",
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.344.0",
     "@aws-sdk/lib-dynamodb": "^3.344.0",
