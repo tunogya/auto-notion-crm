@@ -12,6 +12,7 @@ class NotionManager {
       await this.notion.pages.create({
         parent: {
           type: "database_id",
+          // TODO: change this to your database id
           database_id: '77414699b6864b6986c53c18457731d3',
         },
         icon: {
@@ -113,6 +114,7 @@ class NotionManager {
     // if user exists, return user
     // else return null
     const res = await this.notion.databases.query({
+      // TODO: change this to your database id
       database_id: '77414699b6864b6986c53c18457731d3',
       filter: {
         and: [
@@ -205,6 +207,7 @@ class NotionManager {
     let next_cursor = undefined;
     while (true) {
       const res = await this.notion.databases.query({
+        // TODO: change this to your database id
         database_id: '77414699b6864b6986c53c18457731d3',
         start_cursor: next_cursor,
       });
@@ -222,6 +225,7 @@ class NotionManager {
     let next_cursor = undefined;
     while (true) {
       const res = await this.notion.databases.query({
+        // TODO: change this to your database id
         database_id: 'f7ea157a0b374ab8aede38c2636756db',
         start_cursor: next_cursor,
       });
@@ -237,6 +241,7 @@ class NotionManager {
   async getCDKeyFromNotion(cdKey) {
     try {
       const res = await this.notion.databases.query({
+        // TODO: change this to your database id
         database_id: 'f7ea157a0b374ab8aede38c2636756db',
         filter: {
           and: [
@@ -264,6 +269,7 @@ class NotionManager {
       await this.notion.pages.create({
         parent: {
           type: "database_id",
+          // TODO: change this to your database id
           database_id: 'f7ea157a0b374ab8aede38c2636756db',
         },
         properties: {

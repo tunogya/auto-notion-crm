@@ -1,6 +1,9 @@
 {
   "name": "auto-notion-crm",
   "version": "1.0.0",
+  "scripts": {
+    "start": "node src/index.js"
+  },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.344.0",
     "@aws-sdk/lib-dynamodb": "^3.344.0",
