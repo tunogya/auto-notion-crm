@@ -40,13 +40,11 @@ class ABot {
       await this.ddb.updatePageIdToMetadata(user_id, page_id);
       if (metadata) {
         const paidUseTTL = metadata?.paidUseTTL || 0;
-        const freeUseTTL = metadata?.freeUseTTL || 0;
-        if (paidUseTTL === 0 && freeUseTTL === 0) {
+        if (paidUseTTL === 0) {
           continue;
         }
-        const freeExpiration = new Date(freeUseTTL * 1000).toISOString();
         const paidExpiration = new Date(paidUseTTL * 1000).toISOString();
-        await this.notion.updateCRMUserMetadata(page_id, freeExpiration, paidExpiration);
+        await this.notion.updateCRMUserMetadata(page_id, paidExpiration);
       }
     }
   }

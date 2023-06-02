@@ -92,11 +92,6 @@ class NotionManager {
             type: 'number',
             number: user.logins_count,
           },
-          'Free Expiration': {
-            id: 'EmTC',
-            type: 'date',
-            date: null,
-          },
           'Paid Expiration': {
             id: 'Pdqy',
             type: 'date',
@@ -176,18 +171,11 @@ class NotionManager {
     }
   }
   
-  async updateCRMUserMetadata(page_id, freeExpiration, paidExpiration) {
+  async updateCRMUserMetadata(page_id, paidExpiration) {
     try {
       await this.notion.pages.update({
         page_id: page_id,
         properties: {
-          'Free Expiration': {
-            id: 'EmTC',
-            type: 'date',
-            date: {
-              start: freeExpiration.split('.')[0] + 'Z',
-            },
-          },
           'Paid Expiration': {
             id: 'Pdqy',
             type: 'date',
