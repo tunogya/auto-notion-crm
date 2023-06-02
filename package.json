@@ -1,0 +1,11 @@
+{
+  "name": "auto-notion-crm",
+  "version": "1.0.0",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.344.0",
+    "@aws-sdk/lib-dynamodb": "^3.344.0",
+    "@notionhq/client": "^2.2.5",
+    "dotenv": "^16.1.3",
+    "node-fetch": "^3.3.1"
+  }
+}
