@@ -57,7 +57,6 @@ class Auth0Manager {
       page++;
       users = users.concat(data);
     }
-    console.log(users.length, 'users fetched from Auth0')
     return users;
   }
 }

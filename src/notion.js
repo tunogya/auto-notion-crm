@@ -103,9 +103,8 @@ class NotionManager {
           }
         }
       });
-      console.log("Success! Entry added:", user.user_id);
     } catch (e) {
-      console.error("Error! Entry not added:", user.user_id, e);
+      console.error("Error! Entry not added");
     }
   }
   
@@ -171,7 +170,7 @@ class NotionManager {
         }
       });
     } catch (e) {
-      console.log("Error! Entry not updated:", user.user_id)
+      console.log("Error! Entry not updated")
     }
   }
   
@@ -256,7 +255,7 @@ class NotionManager {
         return res.results[0];
       }
     } catch (e) {
-      console.log("Error! Entry not found:", cdKey.SK);
+      console.log("Error! Entry not found");
     }
   }
   

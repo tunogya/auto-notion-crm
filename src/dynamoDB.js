@@ -41,7 +41,7 @@ class DynamodbManager {
         ConditionExpression: 'attribute_exists(PK)',
       }));
     } catch (e) {
-      console.log('update page_id in ddb error', user_id)
+      console.log('update page_id in ddb error')
     }
   }
   
