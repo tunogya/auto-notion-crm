@@ -4,7 +4,7 @@ const Auth0Manager = require("./lib/auth0");
 const DynamoDBManager = require("./lib/dynamoDB");
 dotenv.config();
 
-class Index {
+class ABot {
   constructor() {
     this.notion = new NotionManager({
       auth: process.env.NOTION_TOKEN,
@@ -65,7 +65,7 @@ class Index {
 }
 
 (async () => {
-  const abot = new Index();
+  const abot = new ABot();
   await abot.syncAuth0UserDataToNotion();
   await abot.syncMetadataToNotion();
   await abot.syncCDKeysToNotion();
