@@ -1,5 +1,5 @@
-const {DynamoDBClient} = require("@aws-sdk/client-dynamodb");
-const {DynamoDBDocumentClient, GetCommand, UpdateCommand, QueryCommand} = require("@aws-sdk/lib-dynamodb");
+import {DynamoDBClient} from "@aws-sdk/client-dynamodb";
+import {DynamoDBDocumentClient, GetCommand, UpdateCommand, QueryCommand} from "@aws-sdk/lib-dynamodb";
 
 class DynamodbManager {
   constructor() {
@@ -69,4 +69,4 @@ class DynamodbManager {
   }
 }
 
-module.exports = DynamodbManager;
+export default DynamodbManager;

@@ -1,4 +1,4 @@
-const {Client} = require("@notionhq/client");
+import {Client} from "@notionhq/client";
 
 class NotionManager {
   constructor(props) {
@@ -369,4 +369,4 @@ class NotionManager {
   }
 }
 
-module.exports = NotionManager;
+export default NotionManager;

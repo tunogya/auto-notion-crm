@@ -1,4 +1,4 @@
-const fetch = require("node-fetch");
+import fetch from "node-fetch";
 
 class Auth0Manager {
   constructor() {
@@ -61,4 +61,4 @@ class Auth0Manager {
   }
 }
 
-module.exports = Auth0Manager;
+export default Auth0Manager;

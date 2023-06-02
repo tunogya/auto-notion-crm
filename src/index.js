@@ -1,7 +1,8 @@
-const dotenv = require('dotenv');
-const NotionManager = require("./lib/notion");
-const Auth0Manager = require("./lib/auth0");
-const DynamoDBManager = require("./lib/dynamoDB");
+import dotenv from 'dotenv';
+import NotionManager from './lib/notion.js';
+import Auth0Manager from './lib/auth0.js';
+import DynamoDBManager from './lib/dynamoDB.js';
+
 dotenv.config();
 
 class ABot {
