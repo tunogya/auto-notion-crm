@@ -53,7 +53,7 @@ class ABot {
   async syncCDKeysToNotion() {
     const cdkeys = await this.ddb.getAllCDKeyFromDDB();
     for (const cdkey of cdkeys) {
-      const page = await this.notion.getCDKeyFromNotion(cdkey);
+      const page = await this.notion.getUnusedCDKeyFromNotion(cdkey);
       if (!page) {
         await this.notion.postCDKeysByDDB(cdkey);
       } else {

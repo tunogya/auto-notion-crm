@@ -226,7 +226,8 @@ class NotionManager {
     return cdKeys;
   }
   
-  async getCDKeyFromNotion(cdKey) {
+  // Only unused CD Keys in Notion need to be checked against DDB
+  async getUnusedCDKeyFromNotion(cdKey) {
     try {
       const res = await this.notion.databases.query({
         // TODO: change this to your database id
@@ -238,6 +239,12 @@ class NotionManager {
               title: {
                 equals: cdKey.SK,
               },
+            },
+            {
+              property: 'Used',
+              checkbox: {
+                equals: false,
+              }
             }
           ]
         }
